@@ -14,8 +14,8 @@ server {
 server {
     listen *:443;
     ssl on;
-    ssl_certificate      /etc/nginx/ssl/<FIXME>.crt;
-    ssl_certificate_key  /etc/nginx/ssl/<FIXME>.key;
+    ssl_certificate     /etc/letsencrypt/live/{{package}}.voteit.se/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{package}}.voteit.se/privkey.pem;
     server_name {{package}}.voteit.se;
     access_log  /var/log/nginx/{{package}}-access.log;
     error_log  /var/log/nginx/{{package}}-error.log;
